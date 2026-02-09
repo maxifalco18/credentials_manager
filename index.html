@@ -17,15 +17,128 @@
               primary: {
                 50: '#fef2f2',
                 100: '#fee2e2',
+                200: '#fecaca',
+                300: '#fca5a5',
+                400: '#f87171',
                 500: '#ef4444',
                 600: '#da291c',
                 700: '#b91c1c',
+                800: '#991b1b',
+                900: '#7f1d1d',
               }
-            }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'fade-in-down': 'fadeInDown 0.3s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'slide-out-right': 'slideOutRight 0.3s ease-in forwards',
+              'scale-in': 'scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+              'shimmer': 'shimmer 1.5s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeInDown: {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(100%)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              slideOutRight: {
+                '0%': { opacity: '1', transform: 'translateX(0)' },
+                '100%': { opacity: '0', transform: 'translateX(100%)' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              pulseSoft: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.7' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-200% 0' },
+                '100%': { backgroundPosition: '200% 0' },
+              },
+            },
           }
         }
       }
     </script>
+    <style>
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+      /* Focus ring utility */
+      .focus-ring:focus { outline: none; box-shadow: 0 0 0 3px rgba(218, 41, 28, 0.2); border-color: #da291c; }
+
+      /* Smooth transitions for all interactive elements */
+      button, a, input, select, textarea { transition: all 0.2s ease; }
+
+      /* Login background pattern */
+      .login-bg {
+        background-color: #f8fafc;
+        background-image: 
+          radial-gradient(circle at 1px 1px, #e2e8f0 1px, transparent 0);
+        background-size: 24px 24px;
+      }
+
+      /* Glass card effect */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+      }
+
+      /* Table row stagger animation */
+      .stagger-row { animation: fadeInUp 0.3s ease-out forwards; opacity: 0; }
+
+      /* Gradient header accent */
+      .header-accent {
+        background: linear-gradient(135deg, #da291c 0%, #b91c1c 100%);
+      }
+
+      /* Stats card hover effect */
+      .stat-card {
+        transition: all 0.2s ease;
+      }
+      .stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Loading skeleton */
+      .skeleton {
+        background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s ease-in-out infinite;
+      }
+
+      /* Badge styles */
+      .badge-ldap {
+        background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+        color: #1e40af;
+        border: 1px solid #93c5fd;
+      }
+      .badge-local {
+        background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+        color: #475569;
+        border: 1px solid #cbd5e1;
+      }
+    </style>
   <script type="importmap">
 {
   "imports": {
