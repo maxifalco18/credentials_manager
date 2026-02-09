@@ -1,0 +1,5 @@
+{
+  "name": "Secure Credentials Manager",
+  "description": "A modern, secure, and responsive dashboard for managing tool credentials with LDAP support.",
+  "requestFramePermissions": []
+}
